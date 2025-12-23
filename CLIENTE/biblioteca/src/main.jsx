@@ -3,15 +3,26 @@ import { createRoot } from 'react-dom/client'
 
 import './index.css'
 import App from './App.jsx'
-import {Navbar} from './navbar.jsx'
+import {Navbar, Footer} from './html.jsx'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const cantoNavbar = document.getElementById('navbarMarota');
-const root = createRoot(cantoNavbar)
+const cantoFooter = document.getElementById('footerMaroto');
 
-const navbar = Navbar();
+const rootNavbar = createRoot(cantoNavbar);
+const rootFooter = createRoot(cantoFooter);
 
-root.render(navbar)
+rootNavbar.render(
+    <StrictMode>
+        <Navbar />
+    </StrictMode>
+)
+
+rootFooter.render(
+    <StrictMode>
+        <Footer />
+    </StrictMode>
+)
